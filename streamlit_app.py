@@ -29,7 +29,7 @@ if ingredients_list:
     ingredients_string = ''
     for fruit_selected in ingredients_list:
         ingredients_string+=fruit_selected+" "
-        fruityvice_response = requests.get(f"https://fruityvice.com/api/fruit/{fruit_selected}")
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_selected)
         fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
 
     #st.write(ingredients_string)
